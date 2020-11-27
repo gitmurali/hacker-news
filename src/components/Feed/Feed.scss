@@ -1,0 +1,24 @@
+.feed {
+  display: grid;
+  grid-template-columns: 3% 3% 25% 65%;
+  font-size: 12px;
+  padding: 5px;
+  align-items: center;
+
+  &-title {
+    font-size: 14px;
+  }
+
+  &-author {
+    color: $light-grey;
+    font-size: 10px;
+    margin-left: 5px;
+  }
+
+  &-arrow {
+    width: 10px;
+    height: 10px;
+    border: 0px;
+    margin: 3px 2px 6px;
+  }
+}

@@ -10,7 +10,10 @@ const mergeProps = (state, { dispatch }, props) => ({
   ...state,
   ...props,
   onload: () => {
-    dispatch(getHackerNewsRequest())
+    dispatch(getHackerNewsRequest({ page: 0 }))
+  },
+  handleMore: page => {
+    dispatch(getHackerNewsRequest({ page }))
   }
 })
 
