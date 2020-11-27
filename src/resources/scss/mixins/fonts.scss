@@ -1,0 +1,39 @@
+@mixin weight {
+  @each $key, $weight in $weights {
+    &-weight-#{$key} {
+      font-weight: $weight;
+    }
+  }
+}
+
+@mixin sizes($sizeArray) {
+  @each $key, $size in $sizeArray {
+    &-size-#{$key} {
+      font-size: $size;
+    }
+  }
+}
+
+@mixin appearance {
+  @each $key, $colour in $appearance-colours {
+    &-#{$key} {
+      color: $colour;
+    }
+  }
+}
+
+@mixin align {
+  @each $key, $alignment in $alignments {
+    &-align-#{$key} {
+      text-align: $alignment;
+    }
+  }
+}
+
+@mixin line-heights($lineHeightArray) {
+  @each $key, $lineHeight in $lineHeightArray {
+    &-line-height-#{$key} {
+      line-height: $lineHeight;
+    }
+  }
+}

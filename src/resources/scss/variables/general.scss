@@ -1,0 +1,53 @@
+$header-height: 50px;
+$side-nav-width: 230px;
+
+$medium-app-width: 720px;
+$large-app-width: 960px;
+$extra-large-app-width: 1140px;
+
+$app-width: 1140px;
+$content-width-medium: 800px;
+$content-width-small: 600px;
+$product-color-bar-width: 6px;
+
+$box-shadow-large: 0 5px 12px rgba($black, .1);
+$box-shadow-large-dark: 0 3px 18px rgba($black, .45);
+$box-shadow-small: 0 2px 10px rgba($black, .1);
+$box-shadow-hover: 0 4px 20px rgba($black, .3);
+$panel-box-shadow: 0 0 13px 0 rgba(0, 0, 0, .07), 0 1px 9px 0 rgba(0, 0, 0, 0);
+
+$form-element-height: 56px;
+$form-border-radius: 5px;
+$element-radius: 4px;
+$big-border: 10px solid;
+$grid-draft-return-items: 50% 20% 10% 10% 10%;
+$grid-manual-adjustments: 50% 20% 16% 14%;
+$grid-manual-adjustments-FI: 30% 20% 16% 15% 16%;
+$grid-manual-adjustments-AU: 40% 20% 10% 10% 20%;
+$grid-manual-adjustments-generic: 40% 10% 15% 15% 20%;
+$registrations-edit-panel: 14% 22% 22% 22%;
+$registrations-add-panel: 8% 23% 27% 27%;
+$grid-draft-return: 50% 20% 30%;
+$two-column-grid: 21% 79%;
+
+$calendar-box-shadow: 6px 7px 5px 0px rgba(158, 158, 158, 1);
+$border-filing-filters: .5px solid $brand-grey-lighter;
+
+$link-colours: (
+  black: $black,
+  blue: $brand-blue,
+  grey: $brand-grey-light
+);
+
+$product-list: (
+  vsuite: $vsuite,
+  vreg: $vreg,
+  vflow: $vflow,
+  vfile: $vfile
+);
+
+$avatar-sizes: (
+  sm: 28px,
+  md: 38px,
+  lg: 50px
+);

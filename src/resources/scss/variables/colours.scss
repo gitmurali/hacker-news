@@ -1,0 +1,61 @@
+/*stylelint-disable*/
+// COLOUR DEFINITION
+$black: #000000;
+$white: #ffffff;
+$grey: #f4f6f7;
+$slightly-grey: #dddddd;
+$shadow-grey: #aaaaaa;
+$red: #ff0000;
+$green: #1b881b;
+$pale-white: #fdfdfd;
+$light-red: #c40000;
+$light-green: #119300;
+$light-white: #f6f6f6;
+$pale-grey: #f5f5f5;
+$orange: #ff6600;
+
+// Brand key colours
+$brand-primary-green: #00fdb7;
+$brand-primary-blue: #130d31;
+$brand-primary-light-blue: #39a0ed;
+$brand-primary-pink: #f61067;
+$brand-primary-yellow: #ffe812;
+$brand-primary-purple: #ae00ff;
+$brand-notification-color: #3dc18a;
+
+// Brand status colours
+$brand-status-success: #4add90;
+$brand-status-warning: #ff6d00;
+$brand-status-error: #f61067;
+$brand-status-info: #39a0ed;
+
+// Brand alternate colours
+$brand-blue: #39a0ed;
+$brand-pink: #f61067;
+$brand-yellow: #ffe812;
+$brand-purple: #ae00ff;
+
+// Brand Font colours
+$font-primary: #130d31;
+$font-secondary: #898698;
+
+
+// Brand greys
+$brand-grey: #d3d3d3;
+$brand-grey-dark: $brand-primary-blue;
+$brand-grey-light: #898698;
+$brand-grey-lighter: #dedde2;
+$brand-grey-lightest: #f1f1f3;
+
+$vsuite: #54fabd;
+$vreg: #fee811;
+$vflow: #ae1cff;
+$vfile: #39a0ed;
+
+// GLOBAL COLOURS
+$background: $grey;
+
+// VALIDATION COLOURS
+$valid: $brand-status-success;
+$error: $brand-status-error;
+$warning: $brand-status-warning;

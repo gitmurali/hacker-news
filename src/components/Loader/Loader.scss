@@ -1,0 +1,48 @@
+.component-loader {
+  display: flex;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, .8);
+  z-index: 9;
+  border-radius: 8px;
+
+  &-opaque {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  &-page {
+    position: fixed;
+  }
+
+  &-text {
+    display: block;
+    font-size: 16px;
+  }
+
+  &--is-global {
+    position: fixed;
+    z-index: 999;
+  }
+}
+
+.loader-icon {
+  &--small {
+    width: 10%;
+    height: 10%;
+  }
+
+  &--medium {
+    width: 25%;
+    height: 25%;
+  }
+
+  &--large {
+    width: 40%;
+    height: 40%;
+  }
+}

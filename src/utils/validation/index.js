@@ -1,0 +1,5 @@
+export const containsLowercase = (val) => /[a-z]/g.test(val)
+export const containsUppercase = (val) => /[A-Z]/g.test(val)
+export const containsNumber = (val) => /[0-9]/g.test(val)
+export const containsSpecial = (val) => /[^\w\s]/g.test(val)
+export const containsSubsequentDuplicates = (val) => /(.)\1{2,}/g.test(val)

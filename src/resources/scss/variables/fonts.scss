@@ -1,0 +1,57 @@
+// Weights array
+$weights: (
+  'light': 300,
+  'normal': 400,
+  'normal-italic': '400i',
+  'semi-bold': 600,
+  'bold': 600,
+  'extra-bold': 700
+);
+
+// Heading Font Sizes
+$heading-sizes: (
+  1: 22px,
+  2: 20px,
+  3: 18px
+);
+
+// Heading Line Height Sizes
+$heading-line-heights: (
+  1: 26px,
+  2: 28px,
+  3: 32px,
+  4: 26px,
+  5: 22px,
+  6: 18px,
+  7: 16px,
+);
+
+// Paragraph Font Sizes
+$paragraph-sizes: (
+  'sm': 12px,
+  'md': 14px,
+  'lg': 16px,
+  'xl': 18px,
+);
+
+// line-heights
+$line-heights: (
+  'xs': 12px,
+  'sm': 14px,
+  'md': 14px,
+  'sxl': 24px,
+);
+
+$appearance-colours: (
+  'light': $brand-grey-light,
+  'dark': $black,
+  'form': $brand-grey,
+  'white': $white,
+  'error': $error
+);
+
+$alignments: (
+  'left': left,
+  'center': center,
+  'right': right
+);

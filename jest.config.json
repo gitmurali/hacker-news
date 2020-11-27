@@ -1,0 +1,12 @@
+{
+  "setupFiles": ["jest-canvas-mock", "<rootDir>/src/tests/setupTests.js"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "testPathIgnorePatterns": ["node_modules","cypress"],
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/tests/__mocks__/fileMock.js",
+    "\\.(s?css|less)$": "<rootDir>/src/tests/__mocks__/styleMock.js",
+    "react-select-search": "<rootDir>/src/tests/__mocks__/fileMock.js"
+  },
+  "verbose": true,
+  "collectCoverageFrom": ["<rootDir>/src/**/*.{js,jsx}"]
+}

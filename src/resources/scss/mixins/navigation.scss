@@ -1,0 +1,22 @@
+@mixin product-hover ($percent) {
+  transition: background-color .15s ease-in-out;
+
+  &:hover {
+    @include product-colours($percent);
+  }
+}
+
+@mixin navigation-hover {
+  &:hover {
+    @each $product, $colour in $product-list {
+      path,
+      circle {
+        transition: fill .15s ease-in-out;
+
+        .#{$product} & {
+          fill: $colour;
+        }
+      }
+    }
+  }
+}

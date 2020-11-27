@@ -1,0 +1,47 @@
+@mixin small-mobile {
+  @media screen and (max-width: #{$small-breakpoint-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: #{$medium-breakpoint-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$medium-breakpoint-width + 1}) and (max-width: #{$large-breakpoint-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-desktop {
+  @media screen and (min-width: #{$medium-breakpoint-width + 1}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$large-breakpoint-width + 1}) {
+    @content;
+  }
+}
+
+@mixin medium-breakpoint {
+  @media screen and (min-width: #{$medium-breakpoint-width + 1}) and (max-width: #{$large-breakpoint-width}) {
+    @content;
+  }
+}
+
+@mixin large-breakpoint {
+  @media screen and (min-width: #{$large-breakpoint-width + 1}) and (max-width: #{$extra-large-breakpoint-width}) {
+    @content;
+  }
+}
+
+@mixin extra-large-breakpoint {
+  @media screen and (min-width: #{$large-breakpoint-width + 1}) {
+    @content;
+  }
+}

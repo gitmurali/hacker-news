@@ -1,0 +1,23 @@
+// @import '../variables/status.scss';
+
+@mixin status-panel {
+  > div {
+    width: 48%;
+    padding: 15px 20px;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@mixin status-panels-status {
+  @each $status, $colour in $status-map {
+    .#{$status} {
+      color: $colour;
+      border-color: $colour;
+      box-shadow: 0 0 13px 0 rgba($colour, .2), 0 1px 9px 0 rgba($colour, 0);
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@mixin link {
+  font-size: 16px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @content;
+}
+
+@mixin container {
+  max-width: $app-width;
+  padding: 50px 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @include mobile {
+    padding: 20px;
+  }
+}
+
+@mixin content-container {
+  max-width: $content-width-small;
+  padding: 50px 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @include mobile {
+    padding: 20px;
+  }
+}
+
+@mixin reg-page-calendar-position {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 40px;
+}
+
+@mixin product-colours ($percent: 0%) {
+  @each $product, $colour in $product-list {
+    .#{$product} & {
+      background-color: lighten($colour, $percent);
+    }
+  }
+}
+
+@mixin arrow ($direction: 'right', $size: 5px) {
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+
+    @if ($direction == 'right') {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-left: $size solid $black;
+    }
+
+    @if ($direction == 'up') {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-bottom: $size solid $black;
+    }
+
+    @if ($direction == 'down') {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-top: $size solid $black;
+    }
+
+    @if ($direction == 'left') {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right: $size solid $black;
+    }
+  }
+}

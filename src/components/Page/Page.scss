@@ -1,0 +1,35 @@
+.page-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 92vh;
+  display: flex;
+  padding: 0 $gutter-size;
+
+  &-content-centered {
+    justify-content: center;
+  }
+
+  &-padded {
+    padding: 60px;
+    max-width: $app-width;
+    box-sizing: border-box;
+  }
+  &-portal {
+    max-width: 100%;
+  }
+}
+
+.page-sidebar {
+  position: absolute;
+  left: 25px;
+}
+
+.page-content {
+  flex: 1 1;
+  padding-bottom: 40px;
+  width: 100%;
+
+  &-with-sidebar {
+    margin-left: 150px;
+  }
+}

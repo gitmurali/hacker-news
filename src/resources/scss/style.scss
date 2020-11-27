@@ -1,0 +1,61 @@
+@import 'vendor/normalize.scss';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700&display=swap');
+
+body,
+input,
+textarea,
+button,
+select {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  margin: 0;
+  color: $font-primary;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: $white;
+  color: $font-primary;
+}
+
+
+div {
+  outline: 0 !important;
+}
+
+select {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+select:focus {
+  outline: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:global(.app-container) {
+  min-height: 100vh;
+  padding-bottom: 350px;
+}
+
+:global(.dashboard) {
+  background-color: $background;
+}
+
+:global(.hyperlink) {
+  color: $brand-blue;
+}
+
+:global(.arabic) {
+  direction: rtl;
+}

@@ -1,0 +1,54 @@
+{
+  "presets": [["@babel/preset-env", {
+    "targets": {
+      "browsers": [
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Safari versions",
+        "ie 11"
+      ]
+    }
+  }], "@babel/react", "jest"],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-regenerator",
+    "@babel/plugin-syntax-async-generators",
+    "@babel/plugin-transform-runtime",
+    [
+      "babel-plugin-transform-react-qa-classes",
+      {
+        "attribute": "data-cy",
+        "format": "kebab"
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@root": "./src",
+          "@actions": "./src/actions",
+          "@api": "./src/api",
+          "@resources": "./src/resources",
+          "@containers": "./src/containers",
+          "@components": "./src/components",
+          "@constants": "./src/constants",
+          "@helpers": "./src/helpers",
+          "@hooks": "./src/hooks",
+          "@scss": "./src/resources/scss",
+          "@sagas": "./src/sagas",
+          "@reducers": "./src/reducers",
+          "@hocs": "./src/hocs",
+          "@pages": "./src/pages",
+          "@store": "./src/store",
+          "@routes": "./src/routes",
+          "@utils": "./src/utils",
+          "@translations": "./src/translations",
+          "@factories": "./src/factories",
+          "@svgs": "./src/resources/svgs"
+        }
+      }
+    ]
+  ]
+}

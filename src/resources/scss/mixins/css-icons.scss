@@ -1,0 +1,16 @@
+@mixin tick ($color: $black) {
+  display: inline-block;
+
+  &:after {
+    content: '';
+    display: block;
+
+    width: 3px;
+    height: 6px;
+
+    border: solid $color;
+    border-width: 0 2px 2px 0;
+
+    transform: rotate(45deg);
+  }
+}

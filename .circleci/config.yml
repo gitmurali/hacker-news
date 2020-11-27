@@ -1,0 +1,49 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build_deploy:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10
+    steps:
+      # special step to check out source code to working directory
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies
+      - run:
+          name: 'Install Packages'
+          command: |
+            npm ci
+            sudo npm i
+      - run:
+          name: 'Run Tests'
+          command: npm run test
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - run:
+          name: "Create .env file"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              echo API_URL=${API_URL_PROD} >> .env
+            fi
+      - run: sudo curl -O https://bootstrap.pypa.io/get-pip.py
+      - run: sudo python get-pip.py
+      - run: sudo pip install awscli --upgrade
+workflows:
+  version: 2
+  build_env:
+    jobs:
+      - build_deploy:
+          filters:
+            branches:
+              only:
+                - master

@@ -1,0 +1,13 @@
+.header {
+  background: $orange;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: $white;
+  font-size: 12px;
+}
+
+.logo {
+  border: 1px solid $white;
+}
