@@ -1,1 +1,1 @@
-export { default } from './HackerNewsPage'
+export { default } from './container'

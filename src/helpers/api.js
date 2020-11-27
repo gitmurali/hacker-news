@@ -1,10 +1,8 @@
 import requestWrapper from '@api'
 import { keysToCamel } from '@helpers/camelCaseConverter'
-import { getToken } from '@helpers/user'
 
 export const callApi = request => {
-  const authToken = getToken()
-  return request(requestWrapper(authToken))
+  return request(requestWrapper())
 }
 
 export const handleResponse = response => {

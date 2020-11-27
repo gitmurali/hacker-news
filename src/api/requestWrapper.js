@@ -1,6 +1,4 @@
 import { API_URL } from '@constants/general'
-import ROUTES from '@constants/routes'
-import { destroyToken } from '@helpers/user'
 import { history } from '@routes/history'
 import axios from 'axios'
 
@@ -24,8 +22,7 @@ const verifyToken = ({ response }) => {
   const { status } = response
   if (status === 401 || status === 403) {
     axios.get(`${API_URL}/auth/tokenVerify/`).catch(() => {
-      destroyToken()
-      history.push(ROUTES.LOGIN)
+      history.push('/login')
     })
   }
 
