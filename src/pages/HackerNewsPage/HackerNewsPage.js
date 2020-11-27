@@ -3,16 +3,22 @@ import React, { useEffect, useState } from 'react'
 import HackerNewsHeader from '@components/HackerNewsHeader'
 import NewsFeeds from '@components/NewsFeeds'
 import Page from '@components/Page'
+import TimelineChart from '@components/TimelineChart'
 
 import styles from './HackerNewsPage.scss'
 
 const HackerNewsPage = ({ hackerNews, onload, handleMore }) => {
   const [pages, setPages] = useState(0)
   const [counter, setCounter] = useState(0)
+  const [hits, setHits] = useState([])
 
   useEffect(() => {
     onload()
   }, [])
+
+  useEffect(() => {
+    if (hackerNews.hits) setHits(hackerNews.hits)
+  }, [hackerNews.hits])
 
   useEffect(() => {
     if (hackerNews.nbPages) setPages(hackerNews.nbPages)
@@ -32,6 +38,7 @@ const HackerNewsPage = ({ hackerNews, onload, handleMore }) => {
         <div className={styles.more} onClick={() => setCounter(counter + 1)}>
           More
         </div>
+        {hits.length > 0 && <TimelineChart hits={hits} />}
       </Page>
     </div>
   )
