@@ -30,7 +30,7 @@ const init = async () => {
   const store = await configureStore()
   store.runSaga(rootSagas)
 
-  ReactDOM.render(
+  ReactDOM.hydrate(
     <Provider store={store}>
       {!browserUnsupported() && (
         <ConnectedIntlProvider>

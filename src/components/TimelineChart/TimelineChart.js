@@ -44,9 +44,8 @@ const TimelineChart = ({ hits }) => {
   }, [])
 
   useState(() => {
-    // console.log(hits.length, options, 'candy')
     if (chart) chart.updateOptions(options)
-  }, [hits.length])
+  }, [hits])
 
   return (<div id="chart" />)
 }

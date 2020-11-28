@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Arrow from '@resources/images/grayarrow.gif'
 import moment from 'moment'
@@ -6,12 +6,14 @@ import moment from 'moment'
 import styles from './Feed.scss'
 
 const Feed = ({ newsFeed, index, backgroundColor }) => {
+  const [upvote, setUpvote] = useState(newsFeed.points)
   return (
     <div className={styles.feed} style={{ backgroundColor }}>
       <div>{newsFeed.numComments}</div>
       <div>
-        {newsFeed.points}
-        <span>
+        {upvote}
+        <span className={styles.upvote}
+          onClick={() => upvote - newsFeed.points <= 10 && setUpvote(upvote + 1)}>
           <img src={Arrow} />
         </span>
       </div>
