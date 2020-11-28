@@ -11,7 +11,7 @@ const HackerNewsPage = ({ hackerNews, onload, handleMore }) => {
   const [pages, setPages] = useState(0)
   const [counter, setCounter] = useState(0)
   const [hits, setHits] = useState([])
-
+  const [vote, setVote] = useState({})
   useEffect(() => {
     onload()
   }, [])
@@ -30,15 +30,19 @@ const HackerNewsPage = ({ hackerNews, onload, handleMore }) => {
     }
   }, [counter])
 
+  const handleUpVote = vote => {
+    setVote(vote)
+  }
+
   return (
     <div className={styles.marginTop}>
       <Page contentCentered>
         <HackerNewsHeader />
-        <NewsFeeds hackerNews={hackerNews} onHide={() => handleMore(counter)}/>
+        <NewsFeeds hackerNews={hackerNews} onHide={() => handleMore(counter)} handleUpVote={handleUpVote}/>
         <div className={styles.more} onClick={() => setCounter(counter + 1)}>
           More
         </div>
-        {hits.length > 0 && <TimelineChart hits={hits} />}
+        {hits.length > 0 && <TimelineChart hits={hits} vote={vote} />}
       </Page>
     </div>
   )

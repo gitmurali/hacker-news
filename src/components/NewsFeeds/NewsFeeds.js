@@ -4,7 +4,7 @@ import Feed from '@components/Feed'
 
 // import styles from './NewsFeeds.scss'
 
-const NewsFeeds = ({ hackerNews, onHide }) => {
+const NewsFeeds = ({ hackerNews, onHide, handleUpVote }) => {
   const [hits, setHits] = useState([])
 
   useEffect(() => {
@@ -14,11 +14,14 @@ const NewsFeeds = ({ hackerNews, onHide }) => {
   return (
     <div>
       {hits.map((feed, i) => (
-        <Feed key={feed.title}
+        <Feed
+          key={feed.title}
           newsFeed={feed}
           index={i}
           onHide={onHide}
-          backgroundColor={i % 2 === 0 ? '#e6e5df' : '#f6f5ef'} />
+          onUpVote={handleUpVote}
+          backgroundColor={i % 2 === 0 ? '#e6e5df' : '#f6f5ef'}
+        />
       ))}
     </div>
   )

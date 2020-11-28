@@ -5,13 +5,14 @@ import moment from 'moment'
 
 import styles from './Feed.scss'
 
-const Feed = ({ newsFeed, index, backgroundColor, onHide }) => {
+const Feed = ({ newsFeed, index, backgroundColor, onHide, onUpVote }) => {
   let ids = localStorage.getItem('hideIds')
   const [upvote, setUpvote] = useState(newsFeed.points)
   const [localIds, setLocalIds] = useState('')
 
   useEffect(() => {
-    // callTheServiceHere()
+    // callTheServiceHere() to save in Backend
+    if (upvote !== newsFeed.points && upvote - newsFeed.points <= 10) onUpVote({ upvote, id: newsFeed.objectID })
   }, [upvote])
 
   useEffect(() => {
