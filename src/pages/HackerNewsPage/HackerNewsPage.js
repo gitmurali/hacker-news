@@ -34,7 +34,7 @@ const HackerNewsPage = ({ hackerNews, onload, handleMore }) => {
     <div className={styles.marginTop}>
       <Page contentCentered>
         <HackerNewsHeader />
-        <NewsFeeds hackerNews={hackerNews} />
+        <NewsFeeds hackerNews={hackerNews} onHide={() => handleMore(counter)}/>
         <div className={styles.more} onClick={() => setCounter(counter + 1)}>
           More
         </div>

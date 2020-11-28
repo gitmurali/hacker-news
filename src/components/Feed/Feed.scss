@@ -21,6 +21,14 @@
     border: 0px;
     margin: 3px 2px 6px;
   }
+
+  &-hide {
+    cursor: pointer;
+  }
+
+  &-pad-left {
+    padding-left: 5px;
+  }
 }
 
 .upvote {
