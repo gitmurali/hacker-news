@@ -41,12 +41,6 @@ $ npm run start
 
 Once the server is up and running, navigate to [localhost:3000](http://localhost:3000).
 
-## Screen shots
-
-![Desktop Frontview](https://github.com/gitmurali/hacker-news/blob/master/src/resources/images/1.png?raw=true)
-![Desktop Frontview line chart](https://drive.google.com/file/d/1bZ34UXuwrP0pm7ztWzmuxs0LpmE2oss7/view?usp=sharing)
-![Desktop Frontview Mobile view](https://drive.google.com/file/d/1e6HKZmrDRhvW65zpMTP3j98RpTh10Xop/view?usp=sharing)
-
 ## Testing
 
 [Jest](https://jestjs.io/) is testing platform used for the project. To run test use the following command:
