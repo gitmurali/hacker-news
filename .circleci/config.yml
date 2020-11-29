@@ -38,6 +38,8 @@ jobs:
       - run: npm run build:prod
 workflows:
   version: 2
+  orbs:
+    heroku: circleci/heroku@0.0.10
   build_env:
     jobs:
       - build_deploy:
@@ -45,3 +47,6 @@ workflows:
             branches:
               only:
                 - master
+    heroku_deploy:
+      jobs:
+        - heroku/deploy-via-git

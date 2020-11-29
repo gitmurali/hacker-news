@@ -17,7 +17,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'vSuite',
+      title: 'hacker-news',
       template: absolute('src/public/')
     })
   ]
