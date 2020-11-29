@@ -4,6 +4,7 @@ import HackerNewsHeader from '@components/HackerNewsHeader'
 import NewsFeeds from '@components/NewsFeeds'
 import Page from '@components/Page'
 import TimelineChart from '@components/TimelineChart'
+import { Helmet } from 'react-helmet'
 
 import styles from './HackerNewsPage.scss'
 
@@ -36,13 +37,19 @@ const HackerNewsPage = ({ hackerNews, onload, handleMore }) => {
 
   return (
     <div className={styles.marginTop}>
+      <Helmet>
+        <title>Hacker news app</title>
+        <meta name="description" content="Hacker news page displays latest news feeds" />
+      </Helmet>
       <Page contentCentered>
         <HackerNewsHeader />
-        <NewsFeeds hackerNews={hackerNews} onHide={() => handleMore(counter)} handleUpVote={handleUpVote}/>
-        <div className={styles.more} onClick={() => setCounter(counter + 1)}>
+        <main>
+          <NewsFeeds hackerNews={hackerNews} onHide={() => handleMore(counter)} handleUpVote={handleUpVote}/>
+          <div className={styles.more} onClick={() => setCounter(counter + 1)}>
           More
-        </div>
-        {hits.length > 0 && <TimelineChart hits={hits} vote={vote} />}
+          </div>
+          {hits.length > 0 && <TimelineChart hits={hits} vote={vote} />}
+        </main>
       </Page>
     </div>
   )
