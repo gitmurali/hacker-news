@@ -17,7 +17,7 @@
     "lint": "eslint --ext .jsx,.js src/",
     "lint:fix": "eslint --fix --ext .jsx,.js src/",
     "guide": "npx styleguidist server",
-    "ssr": "node server/index.js",
+    "ssr": "node server/index.js"
   },
   "pre-commit": [
     "lint"
