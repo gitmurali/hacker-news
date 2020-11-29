@@ -21,9 +21,6 @@ jobs:
           command: |
             npm ci
             sudo npm i
-      - run:
-          name: 'Run Tests'
-          command: npm run test
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
