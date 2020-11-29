@@ -18,6 +18,7 @@ class ErrorPage extends Component {
     return { hasError: true }
   }
 
+  // eslint-disable-next-line handle-callback-err
   componentDidCatch (error, errorInfo) {
     history.listen((location, action) => {
       if (action === 'PUSH' || action === 'POP') {

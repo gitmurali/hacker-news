@@ -3,8 +3,6 @@ const resolve = require('path').resolve
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
-const SentryCliPlugin = require('@sentry/webpack-plugin')
-
 const dotenv = require('dotenv').config({ path: '.env' })
 
 module.exports = {
@@ -32,13 +30,6 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
-    }),
-    new SentryCliPlugin({
-      include: 'build',
-      ignoreFile: '.sentrycliignore',
-      ignore: ['node_modules'],
-      stripPrefix: ['build'],
-      rewrite: true
     }),
     new CompressionWebpackPlugin()
   ]
