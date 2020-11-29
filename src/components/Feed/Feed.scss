@@ -7,10 +7,9 @@
   }
   align-items: center;
   @include tablet-desktop {
-    grid-template-columns: 3% 3% 25% 65%;
+    grid-template-columns: 3% 3% 94%;
   }
   @include mobile {
-    grid-template-rows: 20% 20% 20%;
     & div {
       padding: 10px;
     }

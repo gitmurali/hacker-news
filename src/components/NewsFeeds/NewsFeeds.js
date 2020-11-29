@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import Feed from '@components/Feed'
 
-// import styles from './NewsFeeds.scss'
-
 const NewsFeeds = ({ hackerNews, onHide, handleUpVote }) => {
   const [hits, setHits] = useState([])
 

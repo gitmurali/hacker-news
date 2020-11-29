@@ -11,7 +11,7 @@ const HackerNewsHeader = () => {
         <h1>Hacker News</h1>
       </header>
       <div className={styles.header}>
-        <img src={HackerNewsLogo} className={styles.logo} />
+        <img alt="Header logo" src={HackerNewsLogo} className={styles.logo} />
         <a href='#'>
           <span>top</span>
         </a>

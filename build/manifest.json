@@ -1,0 +1,20 @@
+{
+  "short_name": "Hacker news",
+  "name": "Hacker news online",
+  "icons": [
+    {
+      "src": "grayarrow.gif",
+      "type": "image/gif",
+      "sizes": "10x10"
+    },
+    {
+      "src": "y18.gif",
+      "type": "image/gif",
+      "sizes": "18x18"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

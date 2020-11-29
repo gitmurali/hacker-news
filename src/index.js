@@ -17,6 +17,7 @@ import { all } from 'redux-saga/effects'
 
 import configureStore from './store/configureStore'
 
+// for localisation
 addLocaleData([...en, ...fr, ...zh, ...de, ...ar])
 
 const App = lazy(() => import('./App'))

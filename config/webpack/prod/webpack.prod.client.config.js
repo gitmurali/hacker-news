@@ -5,6 +5,7 @@ const resolve = require('path').resolve
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const dotenv = require('dotenv').config({ path: '.env' })
+// const ManifestPlugin = require('webpack-manifest-plugin')
 
 module.exports = {
   optimization: {
@@ -41,5 +42,8 @@ module.exports = {
       threshold: 10240,
       minRatio: 0.8
     })
+    // new ManifestPlugin({
+    //   fileName: 'manifest.json'
+    // })
   ]
 }
