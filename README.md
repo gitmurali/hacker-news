@@ -68,3 +68,4 @@ We use Circle CI as the CI/CD tool.
 - [Webpack](https://webpack.js.org/)
 - [ESLint](https://eslint.org/)
 - [Babel](https://babeljs.io/)
+- [CircleCi](https://circleci.com/)
