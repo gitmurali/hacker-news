@@ -1,11 +1,15 @@
 const webpack = require('webpack')
+
 const resolve = require('path').resolve
+
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
-
 const dotenv = require('dotenv').config({ path: '.env' })
 
 module.exports = {
+  optimization: {
+    minimize: true
+  },
   output: {
     path: resolve(process.cwd(), 'build'),
     filename: 'bundle.[contenthash].js',
@@ -31,6 +35,11 @@ module.exports = {
       minimize: true,
       debug: false
     }),
-    new CompressionWebpackPlugin()
+    new CompressionWebpackPlugin({
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
   ]
 }
