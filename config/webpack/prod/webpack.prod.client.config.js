@@ -7,7 +7,7 @@ const dotenv = require('dotenv').config({ path: '.env' })
 
 module.exports = {
   output: {
-    path: resolve(process.cwd(), 'build/client'),
+    path: resolve(process.cwd(), 'build'),
     filename: 'bundle.[contenthash].js',
     publicPath: '/'
   },
