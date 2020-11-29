@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "stats": "webpack --json > stats.json",
+    "heroku-prebuild": "npm install --dev",
     "build:prod": "NODE_ENV=production webpack -p --env production --config config/webpack/prod/webpack.prod.config",
     "build:dev": "NODE_ENV=dev webpack -p --env dev --config config/webpack/dev/webpack.dev.config",
     "build:test": "NODE_ENV=dev webpack -p --env dev --config config/webpack/dev/webpack.dev.config",
