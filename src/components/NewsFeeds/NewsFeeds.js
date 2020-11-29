@@ -17,6 +17,7 @@ const NewsFeeds = ({ hackerNews, onHide, handleUpVote }) => {
           newsFeed={feed}
           index={i}
           onHide={onHide}
+          upvote={feed.points}
           onUpVote={handleUpVote}
           backgroundColor={i % 2 === 0 ? '#e6e5df' : '#f6f5ef'}
         />

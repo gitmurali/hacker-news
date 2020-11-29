@@ -44,7 +44,9 @@ const HackerNewsPage = ({ hackerNews, onload, handleMore }) => {
       <Page contentCentered>
         <HackerNewsHeader />
         <main>
-          <NewsFeeds hackerNews={hackerNews} onHide={() => handleMore(counter)} handleUpVote={handleUpVote}/>
+          <NewsFeeds hackerNews={hackerNews}
+            onHide={() => handleMore(counter)}
+            handleUpVote={handleUpVote} />
           <div className={styles.more} onClick={() => setCounter(counter + 1)}>
           More
           </div>

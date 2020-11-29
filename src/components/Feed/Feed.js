@@ -12,6 +12,7 @@ const Feed = ({ newsFeed, index, backgroundColor, onHide, onUpVote }) => {
   const [upvote, setUpvote] = useState(newsFeed.points)
   const [localIds, setLocalIds] = useState('')
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
+  const [counter, setCounter] = useState(1)
 
   useEffect(() => {
     // callTheServiceHere() to save in Backend
@@ -37,6 +38,13 @@ const Feed = ({ newsFeed, index, backgroundColor, onHide, onUpVote }) => {
       setLocalIds(`${ids},${id}`)
     }
     onHide()
+  }
+
+  const handleCounter = () => {
+    if (counter <= 10) {
+      setCounter(counter + 1)
+      setUpvote(upvote + 1)
+    }
   }
 
   const isRendering = localIds == null || !localIds.includes(newsFeed.objectID)
@@ -72,7 +80,7 @@ const Feed = ({ newsFeed, index, backgroundColor, onHide, onUpVote }) => {
                 <span
                   aria-label='upvote'
                   className={styles.upvote}
-                  onClick={() => upvote - newsFeed.points <= 10 && setUpvote(upvote + 1)}
+                  onClick={() => handleCounter()}
                 >
                   <img alt='upvote arrow' src={Arrow} />
                 </span>
@@ -85,6 +93,7 @@ const Feed = ({ newsFeed, index, backgroundColor, onHide, onUpVote }) => {
             upvote={upvote}
             backgroundColor={backgroundColor}
             setUpvote={setUpvote}
+            handleCounter={handleCounter}
             handleHide={handleHide}/>
         )}
       </Fragment>

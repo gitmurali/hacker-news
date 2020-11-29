@@ -4,13 +4,13 @@ import styles from '@components/Feed/Feed.scss'
 import Arrow from '@resources/images/grayarrow.gif'
 import moment from 'moment'
 
-const DesktopFeed = ({ newsFeed, upvote, backgroundColor, setUpvote, handleHide }) => {
+const DesktopFeed = ({ newsFeed, upvote, backgroundColor, setUpvote, handleHide, handleCounter }) => {
   return (<div className={styles.feed} style={{ backgroundColor }}>
     <div>{newsFeed.numComments}</div>
     <div>
       {upvote}
       <span className={styles.upvote}
-        onClick={() => upvote - newsFeed.points <= 10 && setUpvote(upvote + 1)}>
+        onClick={() => handleCounter()}>
         <img alt='upvote arrow' src={Arrow} />
       </span>
     </div>
