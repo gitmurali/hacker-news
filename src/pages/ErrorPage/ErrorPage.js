@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 
 import Page from '@components/Page'
-import { NODE_ENV } from '@constants/general'
 import { history } from '@routes/history'
-import * as Sentry from '@sentry/browser'
 import { injectIntl, FormattedMessage } from 'react-intl'
 
 import styles from './ErrorPage.scss'
@@ -21,10 +19,6 @@ class ErrorPage extends Component {
   }
 
   componentDidCatch (error, errorInfo) {
-    if (NODE_ENV === 'production') {
-      Sentry.captureException(error)
-    }
-
     history.listen((location, action) => {
       if (action === 'PUSH' || action === 'POP') {
         this.setState({
