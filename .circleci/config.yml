@@ -35,6 +35,7 @@ jobs:
       - run: sudo curl -O https://bootstrap.pypa.io/get-pip.py
       - run: sudo python get-pip.py
       - run: sudo pip install awscli --upgrade
+      - run: npm run build:prod
 workflows:
   version: 2
   build_env:
