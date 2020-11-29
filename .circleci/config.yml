@@ -8,6 +8,8 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/node:10
+    orbs:
+      heroku: circleci/heroku@0.0.10
     steps:
       # special step to check out source code to working directory
       - checkout
@@ -30,16 +32,14 @@ jobs:
           name: "Create .env file"
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              echo API_URL=${API_URL_PROD} >> .env
+              echo API_URL=${API_URL} >> .env
+              echo API_HOST=${API_HOST} >> .env
+              echo HEROKU_APP_NAME=${HEROKU_APP_NAME} >> .env
+              echo HEROKU_API_KEY=${HEROKU_API_KEY} >> .env
             fi
-      - run: sudo curl -O https://bootstrap.pypa.io/get-pip.py
-      - run: sudo python get-pip.py
-      - run: sudo pip install awscli --upgrade
       - run: npm run build:prod
 workflows:
   version: 2
-  orbs:
-    heroku: circleci/heroku@0.0.10
   build_env:
     jobs:
       - build_deploy:
@@ -47,6 +47,6 @@ workflows:
             branches:
               only:
                 - master
-    heroku_deploy:
-      jobs:
-        - heroku/deploy-via-git
+  heroku_deploy:
+    jobs:
+      - heroku/deploy-via-git
