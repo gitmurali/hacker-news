@@ -5,18 +5,20 @@
   "main": "index.js",
   "scripts": {
     "stats": "webpack --json > stats.json",
-    "heroku-prebuild": "npm install --dev",
+    "heroku-prebuild": "npm install --save-dev",
     "build:prod": "NODE_ENV=production webpack -p --env production --config config/webpack/prod/webpack.prod.config",
     "build:dev": "NODE_ENV=dev webpack -p --env dev --config config/webpack/dev/webpack.dev.config",
     "build:test": "NODE_ENV=dev webpack -p --env dev --config config/webpack/dev/webpack.dev.config",
     "dev-server": "webpack-dev-server --hot ",
-    "start": "webpack-dev-server --watch --hot --inline --port 3000 --config config/webpack/local/webpack.local.config",
+    "start": "serve -s build",
+    "local:start": "webpack-dev-server --watch --hot --inline --port 3000 --config config/webpack/local/webpack.local.config",
     "test:watch": "jest --config=jest.config.json --watch",
     "test": "jest --config=jest.config.json --ci --coverage --updateSnapshot --runInBand",
     "lint": "eslint --ext .jsx,.js src/",
     "lint:fix": "eslint --fix --ext .jsx,.js src/",
     "guide": "npx styleguidist server",
-    "ssr": "node server/index.js"
+    "ssr": "node server/index.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "pre-commit": [
     "lint"
@@ -93,6 +95,7 @@
     "react-select-search": "^2.0.6",
     "redux": "^4.0.5",
     "redux-mock-store": "^1.5.4",
+    "serve": "^11.3.2",
     "shallow-equal": "^1.2.1",
     "snakecase-keys": "^3.1.2",
     "stylelint": "^10.1.0",
